@@ -113,6 +113,7 @@ const protect = async (req, res, next) => {
 
 const queryUsers = async (req, res) => {
   
+  const filter = req.query.filter || "";
   
 
   const allUser = await User.find({

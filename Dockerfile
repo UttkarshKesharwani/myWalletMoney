@@ -1,3 +1,16 @@
-FROM mongo:4.4.7
-RUN echo "rs.initiate();" > /docker-entrypoint-initdb.d/replica-init.js
-CMD [ "--replSet", "rs" ]
+FROM node:latest
+
+
+WORKDIR /app
+
+
+COPY . .
+
+RUN npm install
+
+
+EXPOSE 3000
+
+CMD ["npm","start"]
+
+
