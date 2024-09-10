@@ -5,10 +5,12 @@ import Heading from "../Components/Heading"
 import InputBox from "../Components/InputBox"
 import SubHeading from "../Components/SubHeading"
 import axios from "axios"
+import { useNavigate } from "react-router-dom"
 
 
  const SignIn = () => {
 
+  const navigate = useNavigate();
   const [detail,setDetail] = useState({
     username:"",
     password:""
@@ -26,6 +28,7 @@ import axios from "axios"
       const response = await axios.post("http://localhost:3000/api/v1/user/signin",detail);
       console.log(response.data);
       localStorage.setItem("token",response.data.token)
+      navigate("/")
       
     } catch (error) {
       console.error("Error signing up:", error);

@@ -18,7 +18,7 @@ const DashBoard = () => {
            Authorization: `Bearer ${localStorage.getItem("token")}`
         }
       });
-      // console.log(response.data)
+      console.log(response.data ,"balance")
       setValue(response.data.balance)
     } catch(error) {
       console.log(error.message)

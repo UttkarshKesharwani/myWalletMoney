@@ -4,7 +4,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 
 const SendMoney = () => {
     const [amount,setAmount] = useState("")
-    const [searchParams] = useSearchParams("name")
+    const [searchParams] = useSearchParams("name") // used to get the details from the url directly
     const id = searchParams.get("id");
     const name = searchParams.get("name");
     const navigate = useNavigate();
